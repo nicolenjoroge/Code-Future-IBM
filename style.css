@@ -1,0 +1,315 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(to top right, #c6d4f1, #ffffff);
+  border-radius: 10px;
+
+}
+
+.products{
+  background-color: #f4f7fd;
+}
+h1 {
+  color: #333;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.signup {
+  background-color: #5b54fa;
+  color: white;
+}
+
+.signup a {
+  text-decoration: none;
+  color: black;
+}
+
+.signup:hover {
+  background-color: #c6d4f1;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration:
+    none;
+  color: #333;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #333;
+}
+
+.prod-cont {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+#eames {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prod-cont.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prod-cont.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(-20px);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.mini-navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.mini-navbar ul li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.join {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: white;
+  width: 75%;
+  height: auto;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: rgba(175, 182, 182, 0.229) 5px 5px;
+}
+
+.content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 28px;
+}
+
+.content p {
+  color: #3a3a3a;
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input[type=email] {
+  padding: 12px;
+  width: 100%;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  font-family: Poppins;
+}
+
+input[type=submit] {
+  cursor: pointer;
+  padding: 12px;
+  background-color: #5b54fa;
+  color: white;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-family: Poppins;
+}
+
+input[type=submit]:hover {
+  background-color: #c6d4f1;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.check p {
+  font-size: 10px;
+  text-align: left;
+}
+
+
+#discover-header nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.prod-nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-evenly;
+}
+
+.prod-nav ul li {
+  cursor: pointer;
+}
+
+.prod-nav ul li.active{
+  color: #37B7C3;
+}
+
+
+.prod-nav ul li:hover {
+  color: #37B7C3;
+}
+
+.prod-nav ul li:active {
+  color: #37B7C3;
+}
+
+.grid-container {
+  display: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  flex: 1;
+  padding: 20px;
+}
+
+@media only screen and (max-width:1024px){
+  .grid-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .grid-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.grid-item {
+  transition: background 0.5s, transform 0.5s;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item:hover{
+  background: #92b6ff;
+  color: white;
+  transform: translateY(-10px);
+}
+
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-item h6 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.grid-item p {
+  margin-top: 5px;
+}
+
+.desks .sofas {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .card-container {
+    margin: 150px 400px;
+  }
+
+  .sub {
+    flex-direction: row;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  input[type=submit] {
+    width: auto;
+  }
+
+  .check {
+    flex-direction: row;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+
+
+footer {
+  background-color: #c6d4f1;
+  padding: 10px;
+  text-align: center;
+}

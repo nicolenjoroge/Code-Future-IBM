@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brighter Furniture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li data-target="home"><a href="index.html">Home</a></li>
+                <li data-target="discover"><a href="discover.html">Discover</a></li>
+                <li data-target="join"><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+        <h1>Brighter Furniture <br> <span style="color: #5b54fa;">made pretty</span></h1>
+        <p>Reimagine designs for your funiture to soon turn a house to your home. Join our community today!</p>
+        <div class="buttons">
+            <button class="signup"><a href="join.html">Join</a></button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Featured Products</h2>
+            <aside class="mini-navbar">
+                <ul>
+                    <li data-target="eames">Eames</li>
+                    <li data-target="sofa">Sofa</li>
+                    <li data-target="office">Office</li>
+                </ul>
+            </aside>
+            <div class="prod-cont" id="eames">
+                <div>
+                    <img src="images/prod1.jpeg" alt="Eames Lounge Chair and Ottoman" />
+                </div>
+                <div>
+                    <h4>Eames Lounge Chair and Ottoman</h4>
+                    <p>An icon of modern design, the Eames Lounge Chair and Ottoman offer unparalleled comfort and
+                        timeless style. Perfect for relaxing after a long day or adding a touch of elegance to your
+                        living room.</p>
+                </div>
+            </div>
+
+            <div class="prod-cont" id="sofa">
+                <div>
+                    <img src="images/prod5.jpeg" alt="Modular velvet sofa" />
+                </div>
+                <div>
+                    <h4>Modular velvet sofa</h4>
+                    <p>This modular velvet sofa is ideal for creating a cozy and personalized space in your living room.
+                        Its modular design allows you to adapt it to your needs and style.</p>
+                </div>
+            </div>
+
+            <div class="prod-cont" id="office">
+                <div>
+                    <img src="images/prod3.jpeg" alt="Gisty ergonomic office chair" />
+                </div>
+                <div>
+                    <h4>Gisty ergonomic office chair</h4>
+                    <p>The Gisty chair is designed to provide maximum support and comfort during long working hours.
+                        With its ergonomic design and customizable adjustments, it will help you maintain good posture
+                        and prevent back pain.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Brighter</p>
+    </footer>
+    <script>
+        const navbarItems = document.querySelectorAll('.mini-navbar li');
+        const productContainers = document.querySelectorAll('.prod-cont');
+
+        navbarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetId = item.dataset.target;
+
+                navbarItems.forEach(item => {
+                    item.style.borderBottom = 'none';
+                });
+
+                item.style.borderBottom = '2px solid #37B7C3';
+
+                productContainers.forEach(container => {
+                    container.style.display = 'none';
+                    container.classList.remove('show', 'slide-in');
+                });
+
+                const targetContainer = document.getElementById(targetId);
+                targetContainer.style.display = 'block';
+                setTimeout(() => { 
+                    targetContainer.classList.add('show', 'slide-in');
+                }, 10);
+            });
+        });
+
+        productContainers[0].style.display = 'block';
+        navbarItems[0].style.borderBottom = '2px solid #37B7C3'; 
+    </script>
+</body>
+
+</html>
